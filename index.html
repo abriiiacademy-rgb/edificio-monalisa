@@ -1,0 +1,646 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>Edifício Monalisa — Alto padrão no coração de Indaial | Fersary Imóveis</title>
+<meta name="description" content="Edifício Monalisa, Indaial/SC. Apartamentos de 128 a 135m², 3 suítes, alto padrão. Spa com hidro, piscina, salão de festas e elevador. Fale com um consultor pelo WhatsApp." />
+<meta property="og:title" content="Edifício Monalisa — Viva o melhor de Indaial" />
+<meta property="og:description" content="3 suítes · 128 a 135m² · alto padrão. Últimas unidades. Fale agora pelo WhatsApp." />
+<meta property="og:type" content="website" />
+<meta property="og:image" content="assets/img/hero.jpg" />
+<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'%3E%3Crect width='32' height='32' rx='6' fill='%2313203b'/%3E%3Ctext x='16' y='23' font-family='Georgia,serif' font-size='20' fill='%23c6a256' text-anchor='middle'%3EM%3C/text%3E%3C/svg%3E" />
+
+<!-- ===================== Google Fonts ===================== -->
+<link rel="preconnect" href="https://fonts.googleapis.com" />
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+<link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@400;500;600&family=Cormorant+Garamond:ital,wght@0,400;0,500;0,600;1,400&family=Montserrat:wght@300;400;500;600&family=Playfair+Display:wght@500;600;700&display=swap" rel="stylesheet" />
+
+<style>
+:root{
+  --navy:#13203b; --navy-2:#0b1428; --ink:#1b2030;
+  --gold:#c6a256; --gold-2:#e7cf95; --gold-deep:#9c7c39;
+  --grad-gold:linear-gradient(135deg,#e7cf95 0%,#c6a256 46%,#9c7c39 100%);
+  --cream:#f6f1e7; --paper:#fbf9f3; --cream-2:#efe6d4;
+  --text:#23262e; --muted:#7b7669; --line:rgba(19,32,59,.12);
+  --shadow:0 30px 70px -34px rgba(19,32,59,.45);
+  --max:1200px;
+}
+*{box-sizing:border-box}
+html{scroll-behavior:smooth;overflow-x:hidden;max-width:100%}
+body{
+  margin:0; background:var(--paper); color:var(--text);
+  font-family:"Montserrat",system-ui,sans-serif; font-weight:400;
+  font-size:17px; line-height:1.65; -webkit-font-smoothing:antialiased;
+  overflow-x:hidden;
+}
+h1,h2,h3{font-family:"Cormorant Garamond",Georgia,serif; font-weight:500; line-height:1.08; letter-spacing:.2px; margin:0}
+p{margin:0 0 1.1em}
+a{color:inherit;text-decoration:none}
+img{max-width:100%;display:block}
+.wrap{max-width:var(--max);margin:0 auto;padding:0 28px}
+.eyebrow{font-family:"Cinzel","Montserrat",serif;font-weight:500;letter-spacing:.42em;text-transform:uppercase;font-size:12px;color:var(--gold-deep)}
+.serif-num{font-family:"Cormorant Garamond",serif;font-weight:600;letter-spacing:0}
+.gold-text{background:var(--grad-gold);-webkit-background-clip:text;background-clip:text;color:transparent}
+.rule{width:54px;height:2px;background:var(--grad-gold);border:0;margin:22px 0}
+
+/* ===== buttons ===== */
+.btn{
+  display:inline-flex;align-items:center;gap:11px;cursor:pointer;border:0;
+  font-family:"Montserrat";font-weight:600;font-size:15px;letter-spacing:.02em;
+  padding:16px 30px;border-radius:999px;transition:.35s cubic-bezier(.2,.7,.3,1);
+  position:relative;white-space:nowrap;
+}
+.btn svg{width:20px;height:20px;flex:0 0 auto}
+.btn-gold{background:var(--grad-gold);color:#3a2c0c;box-shadow:0 16px 34px -16px rgba(156,124,57,.85)}
+.btn-gold:hover{transform:translateY(-2px);box-shadow:0 22px 44px -16px rgba(156,124,57,.95)}
+.btn-wa{background:#1faf54;color:#fff;box-shadow:0 16px 34px -16px rgba(31,175,84,.8)}
+.btn-wa:hover{transform:translateY(-2px);background:#1c9c4b}
+.btn-ghost{background:transparent;border:1px solid rgba(255,255,255,.4);color:#fff}
+.btn-ghost:hover{border-color:var(--gold-2);color:var(--gold-2)}
+
+/* ===== nav ===== */
+.nav{position:fixed;inset:0 0 auto 0;z-index:60;transition:.4s;padding:18px 0}
+.nav.scrolled{background:rgba(11,20,40,.92);backdrop-filter:blur(12px);padding:11px 0;box-shadow:0 10px 40px -22px #000}
+.nav .wrap{display:flex;align-items:center;justify-content:space-between;gap:20px}
+.brand{display:flex;align-items:center;gap:13px;color:#fff}
+.brand .emblem{width:42px;height:42px;flex:0 0 auto}
+.brand .bt{display:flex;flex-direction:column;line-height:1}
+.brand .bt .name{font-family:"Cinzel","Montserrat",serif;font-weight:600;font-size:20px;letter-spacing:.16em;color:var(--gold-2)}
+.brand .bt .sub{font-size:9.5px;letter-spacing:.34em;text-transform:uppercase;color:rgba(255,255,255,.66);margin-top:4px}
+.nav-cta{display:flex;align-items:center;gap:22px}
+.nav-links{display:flex;gap:30px}
+.nav-links a{color:rgba(255,255,255,.82);font-size:13.5px;letter-spacing:.04em;font-weight:400;transition:.25s}
+.nav-links a:hover{color:var(--gold-2)}
+.nav .btn{padding:11px 22px;font-size:13.5px}
+
+/* ===== hero ===== */
+.hero{position:relative;min-height:100svh;display:flex;align-items:center;color:#fff;overflow:hidden}
+.hero-bg{position:absolute;inset:0;z-index:0}
+.hero-bg img{width:100%;height:100%;object-fit:cover;object-position:62% center}
+.hero-bg::after{content:"";position:absolute;inset:0;background:
+  linear-gradient(100deg,rgba(8,15,30,.93) 0%,rgba(9,17,34,.78) 34%,rgba(10,18,36,.30) 62%,rgba(10,18,36,.12) 100%),
+  linear-gradient(to top,rgba(8,14,28,.85),transparent 42%)}
+.hero .wrap{position:relative;z-index:2;padding-top:130px;padding-bottom:60px;width:100%}
+.hero-inner{max-width:680px}
+.hero .place{display:flex;align-items:center;gap:14px;color:var(--gold-2);margin-bottom:26px}
+.hero .place span{font-family:"Cinzel","Montserrat",serif;letter-spacing:.34em;font-size:12px;text-transform:uppercase}
+.hero h1{font-size:clamp(46px,7.2vw,92px);letter-spacing:.5px}
+.hero h1 em{font-style:italic;font-weight:400}
+.hero .lead{font-size:clamp(17px,2vw,20px);color:rgba(255,255,255,.86);font-weight:300;max-width:540px;margin:24px 0 34px}
+.hero-actions{display:flex;flex-wrap:wrap;gap:16px;align-items:center}
+.hero-note{display:flex;align-items:center;gap:9px;font-size:13px;color:rgba(255,255,255,.7);margin-top:26px}
+.hero-note b{color:var(--gold-2);font-weight:600}
+.pulse{width:9px;height:9px;border-radius:50%;background:#5fd08a;box-shadow:0 0 0 0 rgba(95,208,138,.7);animation:pulse 2s infinite}
+@keyframes pulse{70%{box-shadow:0 0 0 12px rgba(95,208,138,0)}100%{box-shadow:0 0 0 0 rgba(95,208,138,0)}}
+
+/* specs strip */
+.specs{position:relative;z-index:2;border-top:1px solid rgba(255,255,255,.14)}
+.specs .wrap{display:grid;grid-template-columns:repeat(4,1fr);gap:0}
+.spec{padding:26px 22px;border-right:1px solid rgba(255,255,255,.12);display:flex;flex-direction:column;gap:3px}
+.spec:last-child{border-right:0}
+.spec .v{font-family:"Cormorant Garamond",serif;font-size:34px;font-weight:600;color:var(--gold-2);line-height:1}
+.spec .k{font-size:11px;letter-spacing:.22em;text-transform:uppercase;color:rgba(255,255,255,.66)}
+
+/* ===== section base ===== */
+section{position:relative}
+.band{padding:clamp(72px,9vw,128px) 0}
+.sec-head{max-width:720px;margin:0 auto;text-align:center}
+.sec-head .eyebrow{display:block;margin-bottom:18px}
+.sec-head h2{font-size:clamp(34px,4.6vw,58px);color:var(--navy)}
+.sec-head p{margin-top:20px;color:var(--muted)}
+
+/* intro editorial */
+.intro{background:var(--cream)}
+.intro .wrap{display:grid;grid-template-columns:1.05fr .95fr;gap:clamp(34px,5vw,80px);align-items:center}
+.intro .copy .eyebrow{display:block;margin-bottom:20px}
+.intro .copy h2{font-size:clamp(32px,4vw,52px);color:var(--navy)}
+.intro .copy .big{font-family:"Cormorant Garamond",serif;font-style:italic;font-size:clamp(22px,2.6vw,30px);color:var(--ink);line-height:1.34;margin:22px 0 18px}
+.intro .copy p{color:var(--muted)}
+.intro .visual{position:relative}
+.intro .visual img{border-radius:6px;box-shadow:var(--shadow);width:100%;aspect-ratio:3/4;object-fit:cover}
+.intro .visual .tag{position:absolute;left:-26px;bottom:34px;background:var(--navy);color:#fff;padding:20px 26px;border-radius:5px;box-shadow:var(--shadow)}
+.intro .visual .tag .n{font-family:"Cormorant Garamond",serif;font-size:40px;color:var(--gold-2);font-weight:600;line-height:1}
+.intro .visual .tag .l{font-size:11px;letter-spacing:.2em;text-transform:uppercase;color:rgba(255,255,255,.72)}
+.intro .visual::before{content:"";position:absolute;inset:18px -18px -18px 18px;border:1px solid var(--gold);border-radius:6px;z-index:-1}
+
+/* amenities */
+.amen{background:var(--paper)}
+.amen-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:1px;background:var(--line);border:1px solid var(--line);margin-top:58px;border-radius:8px;overflow:hidden}
+.amen-item{background:var(--paper);padding:38px 26px;text-align:center;transition:.4s;display:flex;flex-direction:column;align-items:center;gap:16px}
+.amen-item:hover{background:#fff}
+.amen-item .ic{width:50px;height:50px;color:var(--gold-deep);transition:.4s}
+.amen-item:hover .ic{transform:translateY(-4px);color:var(--gold)}
+.amen-item .ic svg{width:100%;height:100%;stroke:currentColor;fill:none;stroke-width:1.3;stroke-linecap:round;stroke-linejoin:round}
+.amen-item h3{font-size:21px;color:var(--navy)}
+.amen-item p{font-size:13.5px;color:var(--muted);margin:0}
+
+/* units */
+.units{background:var(--navy);color:#fff;overflow:hidden}
+.units .wrap{display:grid;grid-template-columns:.95fr 1.05fr;gap:clamp(40px,5.5vw,90px);align-items:center}
+.units .copy .eyebrow{color:var(--gold-2);display:block;margin-bottom:20px}
+.units h2{font-size:clamp(34px,4.4vw,56px)}
+.units h2 .gold-text{font-style:italic}
+.units .copy p{color:rgba(255,255,255,.74);margin-top:18px}
+.unit-stats{display:flex;gap:40px;margin:34px 0 36px;flex-wrap:wrap}
+.unit-stats .s .v{font-family:"Cormorant Garamond",serif;font-size:46px;font-weight:600;color:var(--gold-2);line-height:1}
+.unit-stats .s .k{font-size:12px;letter-spacing:.16em;text-transform:uppercase;color:rgba(255,255,255,.6);margin-top:6px}
+.plan{position:relative;border-radius:8px;overflow:hidden;box-shadow:var(--shadow);border:1px solid rgba(255,255,255,.12)}
+.plan img{width:100%;aspect-ratio:16/10;object-fit:cover;filter:saturate(.85)}
+.plan .veil{position:absolute;inset:0;background:linear-gradient(to top,rgba(11,20,40,.92),rgba(11,20,40,.18) 60%);display:flex;flex-direction:column;justify-content:flex-end;padding:30px}
+.plan .veil .lock{display:inline-flex;align-items:center;gap:9px;font-size:13px;color:var(--gold-2);letter-spacing:.04em;margin-bottom:10px}
+.plan .veil h3{font-size:25px;color:#fff}
+.plan .veil .btn{margin-top:18px;align-self:flex-start}
+
+/* location */
+.loc{background:var(--cream)}
+.loc .wrap{display:grid;grid-template-columns:1fr 1fr;gap:clamp(34px,5vw,72px);align-items:stretch}
+.loc .copy{display:flex;flex-direction:column;justify-content:center}
+.loc .copy .eyebrow{display:block;margin-bottom:18px}
+.loc .copy h2{font-size:clamp(32px,4vw,52px);color:var(--navy)}
+.loc-list{list-style:none;padding:0;margin:26px 0 30px}
+.loc-list li{display:flex;gap:15px;padding:15px 0;border-bottom:1px solid var(--line);align-items:flex-start}
+.loc-list li:last-child{border-bottom:0}
+.loc-list .ic{width:22px;height:22px;color:var(--gold-deep);flex:0 0 auto;margin-top:3px}
+.loc-list .ic svg{width:100%;height:100%;stroke:currentColor;fill:none;stroke-width:1.5}
+.loc-list b{color:var(--navy);font-weight:600;display:block;font-size:15px}
+.loc-list span{font-size:14px;color:var(--muted)}
+.locmap{position:relative;border-radius:8px;overflow:hidden;min-height:440px;box-shadow:var(--shadow);
+  background:radial-gradient(120% 90% at 50% 30%,#1a294a 0%,#0f1c36 55%,#0a1428 100%);
+  display:flex;flex-direction:column;justify-content:flex-end;border:1px solid rgba(255,255,255,.06)}
+.locmap-grid{position:absolute;inset:0;opacity:.5;
+  background-image:linear-gradient(rgba(198,162,86,.13) 1px,transparent 1px),linear-gradient(90deg,rgba(198,162,86,.13) 1px,transparent 1px);
+  background-size:40px 40px}
+.locmap-street{position:absolute;background:linear-gradient(90deg,transparent,rgba(231,207,149,.32),transparent)}
+.locmap-street.h{left:0;right:0;top:38%;height:10px}
+.locmap-street.v{top:0;bottom:0;left:46%;width:10px;background:linear-gradient(180deg,transparent,rgba(231,207,149,.32),transparent)}
+.locmap-pin{position:absolute;top:38%;left:46%;transform:translate(-50%,-86%);display:flex;flex-direction:column;align-items:center;color:var(--gold-2);z-index:2}
+.locmap-pin svg{width:42px;height:42px;filter:drop-shadow(0 6px 14px rgba(0,0,0,.5))}
+.locmap-pin em{font-family:"Cinzel","Montserrat",serif;font-style:normal;font-size:11px;letter-spacing:.18em;text-transform:uppercase;color:#fff;margin-top:8px;background:rgba(10,20,40,.7);padding:5px 12px;border-radius:999px;border:1px solid rgba(231,207,149,.35);white-space:nowrap}
+.locmap-pin .ring{position:absolute;top:8px;width:46px;height:46px;border-radius:50%;border:2px solid rgba(231,207,149,.6);animation:ring 2.6s infinite}
+@keyframes ring{0%{transform:scale(.5);opacity:.9}100%{transform:scale(2.4);opacity:0}}
+.locmap-bar{position:relative;z-index:3;display:flex;align-items:center;justify-content:space-between;gap:18px;flex-wrap:wrap;
+  padding:22px 24px;background:linear-gradient(0deg,rgba(8,14,28,.92),rgba(8,14,28,.55));border-top:1px solid rgba(255,255,255,.1)}
+.locmap-bar b{color:#fff;display:block;font-size:15px}
+.locmap-bar span{color:rgba(255,255,255,.6);font-size:13px}
+.locmap-bar .map-link{padding:12px 22px;font-size:13.5px}
+
+/* developer */
+.dev{background:var(--paper);text-align:center}
+.dev .wrap{max-width:840px}
+.dev .fmark{width:60px;height:60px;margin:0 auto 26px}
+.dev h2{font-size:clamp(30px,3.6vw,46px);color:var(--navy)}
+.dev .quote{font-family:"Cormorant Garamond",serif;font-style:italic;font-size:clamp(22px,2.7vw,30px);color:var(--ink);line-height:1.4;margin:22px auto 24px;max-width:680px}
+.dev .reg{display:inline-flex;align-items:center;gap:10px;font-size:13px;letter-spacing:.06em;color:var(--muted);border:1px solid var(--line);padding:10px 20px;border-radius:999px}
+.dev .reg b{color:var(--navy)}
+
+/* final CTA */
+.final{background:var(--navy-2);color:#fff;position:relative;overflow:hidden}
+.final::before{content:"";position:absolute;inset:0;background:url('assets/img/strip.jpg') center/cover;opacity:.16}
+.final::after{content:"";position:absolute;inset:0;background:linear-gradient(160deg,rgba(11,20,40,.86),rgba(8,14,28,.95))}
+.final .wrap{position:relative;z-index:2;text-align:center;max-width:780px}
+.final .eyebrow{color:var(--gold-2);display:block;margin-bottom:20px}
+.final h2{font-size:clamp(36px,5vw,64px)}
+.final h2 em{font-style:italic}
+.final p{color:rgba(255,255,255,.8);margin:22px auto 36px;max-width:560px}
+.final .hero-actions{justify-content:center}
+.final .micro{margin-top:24px;font-size:13px;color:rgba(255,255,255,.6)}
+
+/* footer */
+footer{background:#0a1222;color:rgba(255,255,255,.62);padding:60px 0 36px;font-size:13.5px}
+footer .wrap{display:grid;grid-template-columns:1.4fr 1fr 1fr;gap:40px}
+footer .brand{margin-bottom:18px}
+footer .fcol h4{font-family:"Cinzel","Montserrat",serif;font-size:12px;letter-spacing:.2em;color:var(--gold-2);text-transform:uppercase;margin:0 0 16px;font-weight:500}
+footer .fcol a,footer .fcol p{color:rgba(255,255,255,.6);margin:0 0 9px;transition:.25s}
+footer .fcol a:hover{color:var(--gold-2)}
+footer .legal{grid-column:1/-1;border-top:1px solid rgba(255,255,255,.1);margin-top:34px;padding-top:24px;display:flex;justify-content:space-between;flex-wrap:wrap;gap:14px;font-size:12px;color:rgba(255,255,255,.42)}
+
+/* floating WA */
+.fab{position:fixed;right:22px;bottom:22px;z-index:70;display:flex;align-items:center;gap:0;background:#1faf54;color:#fff;border:0;cursor:pointer;
+  border-radius:999px;padding:15px;box-shadow:0 18px 40px -14px rgba(31,175,84,.9);transition:.4s;overflow:hidden}
+.fab svg{width:26px;height:26px;flex:0 0 auto}
+.fab .lbl{max-width:0;opacity:0;white-space:nowrap;font-weight:600;font-size:14.5px;transition:.4s;overflow:hidden}
+.fab:hover{padding-right:24px}
+.fab:hover .lbl{max-width:220px;opacity:1;margin-left:11px}
+
+/* reveal (gated behind .js so no-JS users still see everything) */
+.reveal{transition:.9s cubic-bezier(.16,.8,.3,1)}
+.js .reveal{opacity:0;transform:translateY(34px)}
+.js .reveal.in{opacity:1;transform:none}
+@media(prefers-reduced-motion:reduce){.js .reveal{opacity:1!important;transform:none!important;transition:none}}
+.reveal.d1{transition-delay:.08s}.reveal.d2{transition-delay:.16s}.reveal.d3{transition-delay:.24s}.reveal.d4{transition-delay:.32s}
+
+/* responsive */
+@media(max-width:960px){
+  .nav-links{display:none}
+  .intro .wrap,.units .wrap,.loc .wrap{grid-template-columns:1fr}
+  .intro .visual{order:-1;max-width:440px;margin:0 auto}
+  .intro .visual .tag{left:14px}
+  .amen-grid{grid-template-columns:repeat(2,1fr)}
+  .specs .wrap{grid-template-columns:repeat(2,1fr)}
+  .spec:nth-child(2){border-right:0}
+  .spec{border-top:1px solid rgba(255,255,255,.1)}
+}
+@media(max-width:560px){
+  body{font-size:16px}
+  .wrap{padding:0 20px}
+  .nav .brand .bt .sub{display:none}
+  .hero .wrap{padding-top:112px}
+  .unit-stats{gap:28px}
+  .intro .visual .tag{left:10px;padding:15px 18px}
+  .loc .map iframe,.map{min-height:320px}
+  .fab .lbl{display:none}
+}
+
+/* Números (specs do herói, stats das unidades e a tag): Playfair Display com
+   algarismos de altura uniforme (lining) e largura fixa (tabular) — alinham na mesma base.
+   Colocado por último para vencer as definições anteriores por ordem de origem. */
+.spec .v,.unit-stats .s .v,.intro .visual .tag .n{
+  font-family:"Playfair Display",serif;
+  font-variant-numeric:lining-nums tabular-nums;
+  font-feature-settings:"lnum" 1,"tnum" 1;
+}
+</style>
+</head>
+<body>
+<script>document.documentElement.classList.add('js');</script>
+
+<!-- ===================== NAV ===================== -->
+<nav class="nav" id="nav">
+  <div class="wrap">
+    <a href="#topo" class="brand" aria-label="Edifício Monalisa">
+      <svg class="emblem" viewBox="0 0 60 60" aria-hidden="true">
+        <circle cx="30" cy="30" r="28" fill="none" stroke="#c6a256" stroke-width="1.2"/>
+        <g stroke="#e7cf95" stroke-width="1.3" fill="none" stroke-linecap="round" stroke-linejoin="round">
+          <path d="M21 24c1-7 5-11 9-11s8 4 9 11"/>
+          <path d="M23 23c0-4 3-7 7-7s7 3 7 7c0 5-2 9-7 9s-7-4-7-9z"/>
+          <path d="M30 32c-5 2-8 6-9 12M30 32c5 2 8 6 9 12"/>
+          <path d="M25 41c2-2 8-2 10 0"/>
+        </g>
+      </svg>
+      <span class="bt"><span class="name">MONALISA</span><span class="sub">Edifício · Indaial SC</span></span>
+    </a>
+    <div class="nav-cta">
+      <div class="nav-links">
+        <a href="#empreendimento">O Empreendimento</a>
+        <a href="#diferenciais">Diferenciais</a>
+        <a href="#unidades">Unidades</a>
+        <a href="#localizacao">Localização</a>
+      </div>
+      <button class="btn btn-wa" data-cta="nav" aria-label="Falar no WhatsApp">        WhatsApp
+      </button>
+    </div>
+  </div>
+</nav>
+
+<!-- ===================== HERO ===================== -->
+<header class="hero" id="topo">
+  <div class="hero-bg"><img src="assets/img/hero.jpg" alt="Render do Edifício Monalisa em Indaial/SC" /></div>
+  <div class="wrap">
+    <div class="hero-inner">
+      <div class="place">
+        <hr class="rule" style="margin:0;width:40px" />
+        <span>Indaial · Santa Catarina</span>
+      </div>
+      <h1>O endereço mais<br/><em>sofisticado</em> de Indaial</h1>
+      <p class="lead">Apartamentos de alto padrão, de 128 a 135m², com 3 suítes. Um projeto feito para quem busca um estilo de vida exclusivo, confortável e atemporal.</p>
+      <div class="hero-actions">
+        <button class="btn btn-gold" data-cta="hero_primary">
+          Falar com um consultor
+        </button>
+        <button class="btn btn-ghost" data-scroll="#unidades">Ver as unidades</button>
+      </div>
+      <div class="hero-note"><span class="pulse"></span><span><b>Últimas unidades</b> disponíveis · atendimento imediato pelo WhatsApp</span></div>
+    </div>
+  </div>
+</header>
+
+<!-- specs strip -->
+<div class="specs" style="background:var(--navy-2)">
+  <div class="wrap">
+    <div class="spec reveal"><span class="v">3</span><span class="k">Suítes</span></div>
+    <div class="spec reveal d1"><span class="v">128–135</span><span class="k">m² privativos</span></div>
+    <div class="spec reveal d2"><span class="v">2–3</span><span class="k">Vagas de garagem</span></div>
+    <div class="spec reveal d3"><span class="v">Alto</span><span class="k">Padrão de acabamento</span></div>
+  </div>
+</div>
+
+<!-- ===================== INTRO ===================== -->
+<section class="band intro" id="empreendimento">
+  <div class="wrap">
+    <div class="copy reveal">
+      <span class="eyebrow">O Empreendimento</span>
+      <h2>Uma obra-prima<br/>residencial</h2>
+      <hr class="rule" />
+      <p class="big">“Este é o lugar ideal para quem busca um estilo de vida sofisticado e confortável.”</p>
+      <p>O Edifício Monalisa nasce no bairro Nações, em Indaial, para redefinir o que significa morar bem. Linhas contemporâneas, áreas comuns de lazer completo e plantas amplas e inteligentes — cada detalhe foi pensado para valorizar o seu dia a dia e o seu patrimônio.</p>
+      <p>São poucas unidades, todas de alto padrão. Uma escolha para quem entende que o melhor endereço é também o melhor investimento.</p>
+      <button class="btn btn-gold" data-cta="intro" style="margin-top:8px">Quero conhecer o projeto</button>
+    </div>
+    <div class="visual reveal d2">
+      <img src="assets/img/tower.jpg" alt="Detalhe da fachada do Edifício Monalisa" />
+      <div class="tag"><div class="n">128–135m²</div><div class="l">Área privativa · 3 suítes</div></div>
+    </div>
+  </div>
+</section>
+
+<!-- ===================== DIFERENCIAIS ===================== -->
+<section class="band amen" id="diferenciais">
+  <div class="wrap">
+    <div class="sec-head reveal">
+      <span class="eyebrow">Diferenciais</span>
+      <h2>Lazer e conforto <span class="gold-text" style="font-style:italic">de verdade</span></h2>
+      <p>Uma estrutura completa, com itens de alto padrão pensados para o bem-estar de toda a família.</p>
+    </div>
+    <div class="amen-grid">
+      <!-- 1 -->
+      <div class="amen-item reveal"><span class="ic"><svg viewBox="0 0 48 48"><path d="M6 40h36M9 40V20l15-9 15 9v20M18 40V28h12v12M16 21h4M28 21h4"/><path d="M24 6v5"/><circle cx="24" cy="15.5" r="1"/></svg></span><h3>Salão de festas</h3><p>Espaço gourmet para receber bem</p></div>
+      <!-- 2 -->
+      <div class="amen-item reveal d1"><span class="ic"><svg viewBox="0 0 48 48"><path d="M24 8c5 4 5 9 0 13-5-4-5-9 0-13z"/><path d="M7 33c3 0 3 3 6 3s3-3 6-3 3 3 6 3 3-3 6-3 3 3 6 3 3-3 6-3"/><path d="M7 40c3 0 3 3 6 3s3-3 6-3 3 3 6 3 3-3 6-3 3 3 6 3 3-3 6-3"/></svg></span><h3>Spa com hidro</h3><p>Relaxamento e bem-estar em casa</p></div>
+      <!-- 3 -->
+      <div class="amen-item reveal d2"><span class="ic"><svg viewBox="0 0 48 48"><path d="M6 30c3 0 3 3 6 3s3-3 6-3 3 3 6 3 3-3 6-3 3 3 6 3 3-3 6-3"/><path d="M6 38c3 0 3 3 6 3s3-3 6-3 3 3 6 3 3-3 6-3 3 3 6 3 3-3 6-3"/><path d="M16 30V12a3 3 0 0 1 6 0v18M16 19h6"/></svg></span><h3>Piscina</h3><p>Área molhada para lazer ao ar livre</p></div>
+      <!-- 4 -->
+      <div class="amen-item reveal d3"><span class="ic"><svg viewBox="0 0 48 48"><path d="M24 5l4 6 7 1-5 5 1 7-7-3-7 3 1-7-5-5 7-1z"/><path d="M10 42h28"/></svg></span><h3>Acabamento alto padrão</h3><p>Materiais nobres do piso ao teto</p></div>
+      <!-- 5 -->
+      <div class="amen-item reveal"><span class="ic"><svg viewBox="0 0 48 48"><rect x="13" y="6" width="22" height="36" rx="2"/><path d="M24 6v36"/><path d="M18 16l-3 3 3 3M30 16l3 3-3 3"/></svg></span><h3>Elevador</h3><p>Acesso prático a todos os andares</p></div>
+      <!-- 6 -->
+      <div class="amen-item reveal d1"><span class="ic"><svg viewBox="0 0 48 48"><path d="M24 6c4 4 6 8 6 12a6 6 0 0 1-12 0c0-4 2-8 6-12z"/><path d="M14 26c-2 6 2 14 10 14s12-8 10-14"/></svg></span><h3>Aquecimento a gás</h3><p>Água quente com economia e conforto</p></div>
+      <!-- 7 -->
+      <div class="amen-item reveal d2"><span class="ic"><svg viewBox="0 0 48 48"><path d="M24 42s13-11 13-21a13 13 0 0 0-26 0c0 10 13 21 13 21z"/><circle cx="24" cy="21" r="5"/></svg></span><h3>Ótima localização</h3><p>No coração do bairro Nações</p></div>
+      <!-- 8 -->
+      <div class="amen-item reveal d3"><span class="ic"><svg viewBox="0 0 48 48"><path d="M8 32l3-9a4 4 0 0 1 3.8-2.8h18.4A4 4 0 0 1 37 23l3 9M8 32h32v6H8zM13 38v3M35 38v3"/><circle cx="14" cy="32" r="2"/><circle cx="34" cy="32" r="2"/></svg></span><h3>2 ou 3 vagas</h3><p>Garagem ampla e privativa</p></div>
+    </div>
+  </div>
+</section>
+
+<!-- ===================== UNIDADES ===================== -->
+<section class="band units" id="unidades">
+  <div class="wrap">
+    <div class="copy reveal">
+      <span class="eyebrow">As Unidades</span>
+      <h2>Plantas amplas e <span class="gold-text">inteligentes</span></h2>
+      <p>Apartamentos espaçosos com área privativa que varia de 128 a 135m², todos com 3 suítes. Ambientes integrados, ventilação natural e o conforto que a sua família merece.</p>
+      <div class="unit-stats">
+        <div class="s"><div class="v">3</div><div class="k">Suítes</div></div>
+        <div class="s"><div class="v">128–135</div><div class="k">m² privativos</div></div>
+        <div class="s"><div class="v">2–3</div><div class="k">Vagas</div></div>
+      </div>
+      <button class="btn btn-wa" data-cta="unidades">        Receber plantas e valores
+      </button>
+    </div>
+    <div class="plan reveal d2">
+      <img src="assets/img/plan_teaser.jpg" alt="Planta humanizada do apartamento" />
+      <div class="veil">
+        <span class="lock"><svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="5" y="11" width="14" height="10" rx="2"/><path d="M8 11V7a4 4 0 0 1 8 0v4"/></svg> Planta humanizada · exclusiva</span>
+        <h3>Veja a planta completa e a tabela de valores</h3>
+        <button class="btn btn-gold" data-cta="plan">Receber no WhatsApp</button>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ===================== LOCALIZAÇÃO ===================== -->
+<section class="band loc" id="localizacao">
+  <div class="wrap">
+    <div class="copy reveal">
+      <span class="eyebrow">Endereço</span>
+      <h2>No melhor de Indaial</h2>
+      <hr class="rule" />
+      <ul class="loc-list">
+        <li><span class="ic"><svg viewBox="0 0 24 24"><path d="M12 21s7-6 7-11a7 7 0 0 0-14 0c0 5 7 11 7 11z"/><circle cx="12" cy="10" r="2.5"/></svg></span><div><b>Rua das Nações, esquina com Rua Equador</b><span>Bairro Nações · Indaial · Santa Catarina</span></div></li>
+        <li><span class="ic"><svg viewBox="0 0 24 24"><rect x="3" y="4" width="18" height="16" rx="2"/><path d="M3 9h18M8 4v5"/></svg></span><div><b>Bairro consolidado e valorizado</b><span>Comércio, serviços e escolas ao redor</span></div></li>
+        <li><span class="ic"><svg viewBox="0 0 24 24"><path d="M4 17h16M6 17V9l6-4 6 4v8M10 17v-4h4v4"/></svg></span><div><b>Conecte-se com o melhor da cidade</b><span>Fácil acesso às principais vias de Indaial</span></div></li>
+      </ul>
+      <button class="btn btn-gold" data-cta="localizacao">Tirar dúvidas sobre a região</button>
+    </div>
+    <div class="locmap reveal d2">
+      <div class="locmap-grid"></div>
+      <div class="locmap-street h"></div>
+      <div class="locmap-street v"></div>
+      <div class="locmap-pin">
+        <span class="ring"></span>
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6"><path d="M12 22s7-6.2 7-12a7 7 0 0 0-14 0c0 5.8 7 12 7 12z"/><circle cx="12" cy="10" r="2.6"/></svg>
+        <em>Edifício Monalisa</em>
+      </div>
+      <div class="locmap-bar">
+        <div><b>Rua das Nações × Rua Equador</b><span>Bairro Nações · Indaial · SC</span></div>
+        <a class="btn btn-gold map-link" target="_blank" rel="noopener"
+           href="https://www.google.com/maps/search/?api=1&query=Rua%20das%20Na%C3%A7%C3%B5es%20esquina%20Rua%20Equador%2C%20Bairro%20Na%C3%A7%C3%B5es%2C%20Indaial%20-%20SC">Ver no mapa</a>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ===================== INCORPORADORA ===================== -->
+<section class="band dev">
+  <div class="wrap reveal">
+    <svg class="fmark" viewBox="0 0 60 60" aria-hidden="true">
+      <rect x="2" y="2" width="56" height="56" rx="10" fill="none" stroke="#c6a256" stroke-width="1.2"/>
+      <path d="M22 18h18M22 18v24M22 30h12" stroke="#c6a256" stroke-width="3" fill="none" stroke-linecap="round"/>
+    </svg>
+    <span class="eyebrow">A Incorporadora</span>
+    <h2 style="margin-top:16px">Fersary Imóveis</h2>
+    <p class="quote">“Unindo propósitos e construindo o melhor da cidade de Indaial.”</p>
+    <p style="max-width:620px;margin:0 auto 26px;color:var(--muted)">Tradição, credibilidade e compromisso com a qualidade em cada empreendimento. O Edifício Monalisa é registrado e segue todas as exigências legais de incorporação.</p>
+    <span class="reg">Registro de Incorporação <b>R.5-44.628</b></span>
+  </div>
+</section>
+
+<!-- ===================== FINAL CTA ===================== -->
+<section class="band final">
+  <div class="wrap reveal">
+    <span class="eyebrow">Últimas unidades</span>
+    <h2>Garanta o seu <em>Monalisa</em></h2>
+    <p>Fale agora com um de nossos consultores pelo WhatsApp e receba a tabela de valores, condições de pagamento e as plantas das unidades ainda disponíveis. Sem compromisso.</p>
+    <div class="hero-actions">
+      <button class="btn btn-wa" data-cta="final">        Falar com um consultor agora
+      </button>
+    </div>
+    <p class="micro">Atendimento humano · resposta rápida · você fala direto com a Fersary</p>
+  </div>
+</section>
+
+<!-- ===================== FOOTER ===================== -->
+<footer>
+  <div class="wrap">
+    <div class="fcol">
+      <a href="#topo" class="brand" style="color:#fff">
+        <svg class="emblem" viewBox="0 0 60 60" aria-hidden="true"><circle cx="30" cy="30" r="28" fill="none" stroke="#c6a256" stroke-width="1.2"/><g stroke="#e7cf95" stroke-width="1.3" fill="none" stroke-linecap="round" stroke-linejoin="round"><path d="M21 24c1-7 5-11 9-11s8 4 9 11"/><path d="M23 23c0-4 3-7 7-7s7 3 7 7c0 5-2 9-7 9s-7-4-7-9z"/><path d="M30 32c-5 2-8 6-9 12M30 32c5 2 8 6 9 12"/><path d="M25 41c2-2 8-2 10 0"/></g></svg>
+        <span class="bt"><span class="name">MONALISA</span><span class="sub">Edifício · Indaial SC</span></span>
+      </a>
+      <p style="max-width:300px">Apartamentos de alto padrão no bairro Nações, em Indaial — SC. Uma realização Fersary Imóveis.</p>
+    </div>
+    <div class="fcol">
+      <h4>Navegue</h4>
+      <p><a href="#empreendimento">O Empreendimento</a></p>
+      <p><a href="#diferenciais">Diferenciais</a></p>
+      <p><a href="#unidades">Unidades</a></p>
+      <p><a href="#localizacao">Localização</a></p>
+    </div>
+    <div class="fcol">
+      <h4>Contato</h4>
+      <p><a href="#" data-cta="footer">WhatsApp comercial</a></p>
+      <p>Rua das Nações, esq. Rua Equador</p>
+      <p>Bairro Nações · Indaial · SC</p>
+      <p>Incorporação R.5-44.628</p>
+    </div>
+    <div class="legal">
+      <span>© <span id="yr"></span> Fersary Imóveis · Edifício Monalisa. Todos os direitos reservados.</span>
+      <span>Imagens meramente ilustrativas. Plantas e medidas sujeitas a alteração conforme projeto aprovado.</span>
+    </div>
+  </div>
+</footer>
+
+<!-- floating WhatsApp -->
+<button class="fab" data-cta="fab" aria-label="Falar com a Fersary">
+  <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 11.5a8.4 8.4 0 0 1-.9 3.8 8.5 8.5 0 0 1-7.6 4.7 8.4 8.4 0 0 1-3.8-.9L3 21l1.9-5.7a8.4 8.4 0 0 1-.9-3.8 8.5 8.5 0 0 1 4.7-7.6 8.4 8.4 0 0 1 3.8-.9h.5a8.5 8.5 0 0 1 8 8z"/></svg>
+  <span class="lbl">Fale conosco</span>
+</button>
+
+<!-- =====================================================================
+     CONFIG + MEDIÇÃO (Meta Pixel + GTM dataLayer + Conversions API beacon)
+     ===================================================================== -->
+<script>
+/* ┌─────────────────────────────────────────────────────────────┐
+   │  AJUSTE AQUI ANTES DE PUBLICAR                                │
+   └─────────────────────────────────────────────────────────────┘ */
+window.MONALISA_CONFIG = {
+  WHATSAPP_NUMBER : "5547991689990",   // Fersary Imóveis — 47 99168-9990
+  PIXEL_ID        : "1034525752246405", // Pixel "Edifício Monalisa" (conta Fersary Imóveis)
+  GTM_ID          : "",                // <-- ID do Google Tag Manager (ex.: GTM-XXXXXX). Opcional
+  CAPI_ENDPOINT   : "/api/lead",       // <-- endpoint do servidor para a Conversions API. Vazio = desativa
+  PROJECT_NAME    : "Edifício Monalisa",
+  LEAD_VALUE      : 0,                 // valor estimado por lead (opcional, p/ otimização). 0 = não envia
+  CURRENCY        : "BRL"
+};
+</script>
+
+<script>
+(function(){
+  var C = window.MONALISA_CONFIG;
+
+  /* ---------- util ---------- */
+  function uuid(){return 'xxxxxxxx-xxxx-4xxx-yxxx-xxxxxxxxxxxx'.replace(/[xy]/g,function(c){var r=Math.random()*16|0,v=c=='x'?r:(r&0x3|0x8);return v.toString(16);});}
+  function getCookie(n){var m=document.cookie.match('(^|;)\\s*'+n+'\\s*=\\s*([^;]+)');return m?m.pop():'';}
+  function setCookie(n,v,days){var d=new Date();d.setTime(d.getTime()+days*864e5);document.cookie=n+'='+v+';expires='+d.toUTCString()+';path=/;SameSite=Lax';}
+  function qs(k){return new URLSearchParams(location.search).get(k)||'';}
+
+  /* ---------- UTMs (persistidos p/ atribuição da campanha) ---------- */
+  var UTM_KEYS=['utm_source','utm_medium','utm_campaign','utm_content','utm_term'];
+  var utms={};
+  UTM_KEYS.forEach(function(k){
+    var v=qs(k);
+    if(v){setCookie('m_'+k,v,30);}
+    utms[k]=v||getCookie('m_'+k)||'';
+  });
+
+  /* ---------- fbclid -> _fbc (melhora o match da CAPI) ---------- */
+  var fbclid=qs('fbclid');
+  if(fbclid && !getCookie('_fbc')){ setCookie('_fbc','fb.1.'+Date.now()+'.'+fbclid,90); }
+
+  /* ---------- GTM ---------- */
+  window.dataLayer=window.dataLayer||[];
+  if(C.GTM_ID){
+    (function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':new Date().getTime(),event:'gtm.js'});
+      var f=d.getElementsByTagName(s)[0],j=d.createElement(s);j.async=true;
+      j.src='https://www.googletagmanager.com/gtm.js?id='+i;f.parentNode.insertBefore(j,f);})(window,document,'script','dataLayer',C.GTM_ID);
+  }
+
+  /* ---------- Meta Pixel ---------- */
+  if(C.PIXEL_ID){
+    !function(f,b,e,v,n,t,s){if(f.fbq)return;n=f.fbq=function(){n.callMethod?n.callMethod.apply(n,arguments):n.queue.push(arguments)};
+      if(!f._fbq)f._fbq=n;n.push=n;n.loaded=!0;n.version='2.0';n.queue=[];t=b.createElement(e);t.async=!0;
+      t.src=v;s=b.getElementsByTagName(e)[0];s.parentNode.insertBefore(t,s)}(window,document,'script','https://connect.facebook.net/en_US/fbevents.js');
+    fbq('init',C.PIXEL_ID);
+    fbq('track','PageView');
+  } else {
+    window.fbq=window.fbq||function(){ (window.fbq.q=window.fbq.q||[]).push(arguments); console.log('[Pixel desativado] fbq',arguments); };
+  }
+
+  /* ---------- Conversions API (server-side) via beacon ---------- */
+  function sendCAPI(payload){
+    if(!C.CAPI_ENDPOINT) return;
+    try{
+      var body=JSON.stringify(payload);
+      if(navigator.sendBeacon){ navigator.sendBeacon(C.CAPI_ENDPOINT, new Blob([body],{type:'application/json'})); }
+      else{ fetch(C.CAPI_ENDPOINT,{method:'POST',headers:{'Content-Type':'application/json'},body:body,keepalive:true}); }
+    }catch(e){ console.warn('CAPI beacon falhou',e); }
+  }
+
+  /* ---------- WhatsApp + tracking de Lead ---------- */
+  function buildWaMessage(code){
+    var base="Olá! Vim pela página do Edifício Monalisa e quero saber sobre as unidades disponíveis (3 suítes, 128–135m²).";
+    var src = utms.utm_campaign || utms.utm_source;
+    if(src) base += "\nCampanha: "+src;
+    base += "\nCód.: "+code;
+    return encodeURIComponent(base);
+  }
+
+  function trackLead(ctaName){
+    var eventId   = uuid();                 // dedup entre Pixel e CAPI
+    var leadCode  = 'MNL-'+eventId.slice(0,6).toUpperCase();
+    var custom = {
+      content_name : C.PROJECT_NAME,
+      content_category: 'imovel_whatsapp',
+      cta: ctaName||'cta',
+      lead_code: leadCode,
+      utm_source: utms.utm_source, utm_medium: utms.utm_medium,
+      utm_campaign: utms.utm_campaign, utm_content: utms.utm_content, utm_term: utms.utm_term
+    };
+    if(C.LEAD_VALUE>0){ custom.value=C.LEAD_VALUE; custom.currency=C.CURRENCY; }
+
+    // 1) Meta Pixel (browser) — evento padrão "Lead"
+    try{ fbq('track','Lead',custom,{eventID:eventId}); }catch(e){}
+
+    // 2) GTM dataLayer
+    window.dataLayer.push({event:'whatsapp_lead', event_id:eventId, lead_code:leadCode, cta:ctaName, project:C.PROJECT_NAME, ...utms});
+
+    // 3) Conversions API (server) — MESMO event_id p/ deduplicação
+    sendCAPI({
+      event_name:'Lead',
+      event_id:eventId,
+      event_source_url:location.href,
+      action_source:'website',
+      fbp:getCookie('_fbp'),
+      fbc:getCookie('_fbc'),
+      lead_code:leadCode,
+      cta:ctaName,
+      custom_data:custom
+    });
+
+    return buildWaMessage(leadCode);
+  }
+
+  function openWhatsApp(ctaName){
+    var msg=trackLead(ctaName);
+    var url='https://wa.me/'+C.WHATSAPP_NUMBER+'?text='+msg;
+    // pequeno atraso garante o disparo do beacon antes da navegação
+    setTimeout(function(){ window.open(url,'_blank','noopener'); }, 180);
+  }
+
+  /* ---------- bind dos CTAs ---------- */
+  document.querySelectorAll('[data-cta]').forEach(function(el){
+    el.addEventListener('click',function(e){ e.preventDefault(); openWhatsApp(el.getAttribute('data-cta')); });
+  });
+  document.querySelectorAll('[data-scroll]').forEach(function(el){
+    el.addEventListener('click',function(){ var t=document.querySelector(el.getAttribute('data-scroll')); if(t)t.scrollIntoView({behavior:'smooth'}); });
+  });
+
+  /* ---------- nav scrolled + reveal + ano ---------- */
+  var nav=document.getElementById('nav');
+  window.addEventListener('scroll',function(){ nav.classList.toggle('scrolled',window.scrollY>40); },{passive:true});
+  if('IntersectionObserver' in window){
+    var io=new IntersectionObserver(function(es){es.forEach(function(en){if(en.isIntersecting){en.target.classList.add('in');io.unobserve(en.target);}});},{threshold:.14});
+    document.querySelectorAll('.reveal').forEach(function(el){io.observe(el);});
+    // segurança: revela qualquer item já visível e o que ficar pendente após carregar
+    window.addEventListener('load',function(){setTimeout(function(){
+      document.querySelectorAll('.reveal:not(.in)').forEach(function(el){ if(el.getBoundingClientRect().top<innerHeight){el.classList.add('in');} });
+    },200);});
+  } else {
+    document.querySelectorAll('.reveal').forEach(function(el){el.classList.add('in');});
+  }
+  document.getElementById('yr').textContent=new Date().getFullYear();
+})();
+</script>
+</body>
+</html>

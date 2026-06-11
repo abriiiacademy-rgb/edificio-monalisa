@@ -1,0 +1,14 @@
+# Segredos — NUNCA versionar
+.env
+.env.local
+.env.*.local
+
+# Fontes de trabalho / extrações (não publicar — inclui fotos do evento)
+assets/raw/
+
+# Sistema
+.DS_Store
+
+# Dependências (caso vire projeto Node/Vercel)
+node_modules/
+.vercel
