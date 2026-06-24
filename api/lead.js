@@ -65,10 +65,9 @@ export default async function handler(req, res) {
     "";
   const ua = body.user_agent || req.headers["user-agent"] || "";
 
-  // user_data: IP e user-agent NÃO são hasheados (spec da Meta)
   const user_data = {
-        client_ip_address: ip,
-        client_user_agent: ua,
+    client_ip_address: ip,
+    client_user_agent: ua,
   };
   // _fbp / _fbc melhoram a correspondência (não são PII, não hashear)
   if (body.fbp) user_data.fbp = body.fbp;
@@ -97,10 +96,6 @@ export default async function handler(req, res) {
     user_data,
     custom_data,
   };
-
-  if (!event.event_id) {
-        console.warn("event_id ausente — deduplicação não funcionará");
-  }
 
   const payload = { data: [event] };
 
