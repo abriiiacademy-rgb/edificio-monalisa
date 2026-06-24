@@ -479,7 +479,7 @@ footer .legal{grid-column:1/-1;border-top:1px solid rgba(255,255,255,.1);margin-
     </div>
     <div class="fcol">
       <h4>Contato</h4>
-      <p><a href="#" data-cta="footer">WhatsApp comercial</a></p>
+      <p><a data-cta="footer" role="button" tabindex="0" style="cursor:pointer">WhatsApp comercial</a></p>
       <p>Rua das Nações, esq. Rua Equador</p>
       <p>Bairro Nações · Indaial · SC</p>
       <p>Incorporação R.5-44.628</p>
@@ -525,14 +525,17 @@ window.MONALISA_CONFIG = {
   function setCookie(n,v,days){var d=new Date();d.setTime(d.getTime()+days*864e5);document.cookie=n+'='+v+';expires='+d.toUTCString()+';path=/;SameSite=Lax';}
   function qs(k){return new URLSearchParams(location.search).get(k)||'';}
 
-  /* ---------- UTMs (persistidos p/ atribuição da campanha) ---------- */
+  /* ---------- UTMs: lê da query string; persiste 30d e usa como fallback ---------- */
   var UTM_KEYS=['utm_source','utm_medium','utm_campaign','utm_content','utm_term'];
-  var utms={};
-  UTM_KEYS.forEach(function(k){
-    var v=qs(k);
-    if(v){setCookie('m_'+k,v,30);}
-    utms[k]=v||getCookie('m_'+k)||'';
-  });
+  function getUTMs(){
+    var o={};
+    UTM_KEYS.forEach(function(k){
+      var v=qs(k);
+      if(v){ setCookie('m_'+k,v,30); }
+      o[k]=v||getCookie('m_'+k)||'';
+    });
+    return o;
+  }
 
   /* ---------- fbclid -> _fbc (melhora o match da CAPI) ---------- */
   var fbclid=qs('fbclid');
@@ -557,70 +560,66 @@ window.MONALISA_CONFIG = {
     window.fbq=window.fbq||function(){ (window.fbq.q=window.fbq.q||[]).push(arguments); console.log('[Pixel desativado] fbq',arguments); };
   }
 
-  /* ---------- Conversions API (server-side) via beacon ---------- */
+  /* ---------- IDs por clique ---------- */
+  // random de 6 chars (sem 0/O/1/I p/ legibilidade no código do WhatsApp)
+  function rand6(){ var c='ABCDEFGHJKLMNPQRSTUVWXYZ23456789',s=''; for(var i=0;i<6;i++){ s+=c.charAt(Math.floor(Math.random()*c.length)); } return s; }
+  // event_id (dedup Pixel <-> CAPI): MNL-<timestamp>-<random6>
+  function gerarEventId(r){ return 'MNL-'+Date.now()+'-'+r; }
+
+  /* ---------- Conversions API (server-side) via beacon — sobrevive à navegação ---------- */
   function sendCAPI(payload){
     if(!C.CAPI_ENDPOINT) return;
     try{
       var body=JSON.stringify(payload);
       if(navigator.sendBeacon){ navigator.sendBeacon(C.CAPI_ENDPOINT, new Blob([body],{type:'application/json'})); }
       else{ fetch(C.CAPI_ENDPOINT,{method:'POST',headers:{'Content-Type':'application/json'},body:body,keepalive:true}); }
-    }catch(e){ console.warn('CAPI beacon falhou',e); }
+    }catch(e){}
   }
 
-  /* ---------- WhatsApp + tracking de Lead ---------- */
-  function buildWaMessage(code){
-    var base="Olá! Vim pela página do Edifício Monalisa e quero saber sobre as unidades disponíveis (3 suítes, 128–135m²).";
-    var src = utms.utm_campaign || utms.utm_source;
-    if(src) base += "\nCampanha: "+src;
-    base += "\nCód.: "+code;
-    return encodeURIComponent(base);
-  }
+  /* ---------- Clique no WhatsApp ----------
+     Dispara Pixel (Lead) + CAPI com o MESMO event_id e redireciona no MESMO tick.
+     window.location.href é OBRIGATÓRIO p/ funcionar no in-app browser do Instagram/Facebook (iOS):
+     window.open()+setTimeout seria bloqueado como popup e o WhatsApp não abriria. */
+  function handleWhatsAppClick(ctaName){
+    var r           = rand6();
+    var eventId     = gerarEventId(r);   // MNL-<ts>-<rand6>
+    var codigoUnico = 'MNL-'+r;          // MNL-XXXXXX (vai na mensagem do WhatsApp)
+    var utms        = getUTMs();
 
-  function trackLead(ctaName){
-    var eventId   = uuid();                 // dedup entre Pixel e CAPI
-    var leadCode  = 'MNL-'+eventId.slice(0,6).toUpperCase();
-    var custom = {
-      content_name : C.PROJECT_NAME,
-      content_category: 'imovel_whatsapp',
-      cta: ctaName||'cta',
-      lead_code: leadCode,
-      utm_source: utms.utm_source, utm_medium: utms.utm_medium,
-      utm_campaign: utms.utm_campaign, utm_content: utms.utm_content, utm_term: utms.utm_term
-    };
-    if(C.LEAD_VALUE>0){ custom.value=C.LEAD_VALUE; custom.currency=C.CURRENCY; }
+    // (a) Meta Pixel (navegador) — MESMO eventID p/ deduplicação
+    try{
+      fbq('track','Lead',{
+        content_name:'Edifício Monalisa',
+        codigo_unico:codigoUnico,
+        utm_source:utms.utm_source, utm_medium:utms.utm_medium,
+        utm_campaign:utms.utm_campaign, utm_content:utms.utm_content, utm_term:utms.utm_term,
+        cta:ctaName
+      },{eventID:eventId});
+    }catch(e){}
 
-    // 1) Meta Pixel (browser) — evento padrão "Lead"
-    try{ fbq('track','Lead',custom,{eventID:eventId}); }catch(e){}
-
-    // 2) GTM dataLayer
-    window.dataLayer.push({event:'whatsapp_lead', event_id:eventId, lead_code:leadCode, cta:ctaName, project:C.PROJECT_NAME, ...utms});
-
-    // 3) Conversions API (server) — MESMO event_id p/ deduplicação
+    // (b) Conversions API (servidor) — MESMO event_id, via sendBeacon
     sendCAPI({
-      event_name:'Lead',
       event_id:eventId,
       event_source_url:location.href,
-      action_source:'website',
-      fbp:getCookie('_fbp'),
-      fbc:getCookie('_fbc'),
-      lead_code:leadCode,
+      user_agent:navigator.userAgent,
+      fbp:getCookie('_fbp'), fbc:getCookie('_fbc'),
+      codigo_unico:codigoUnico,
       cta:ctaName,
-      custom_data:custom
+      utm_source:utms.utm_source, utm_medium:utms.utm_medium,
+      utm_campaign:utms.utm_campaign, utm_content:utms.utm_content, utm_term:utms.utm_term
     });
 
-    return buildWaMessage(leadCode);
-  }
+    // (opcional) camada de dados p/ GTM
+    try{ window.dataLayer.push({event:'whatsapp_lead', event_id:eventId, codigo_unico:codigoUnico, cta:ctaName, utm_campaign:utms.utm_campaign}); }catch(e){}
 
-  function openWhatsApp(ctaName){
-    var msg=trackLead(ctaName);
-    var url='https://wa.me/'+C.WHATSAPP_NUMBER+'?text='+msg;
-    // pequeno atraso garante o disparo do beacon antes da navegação
-    setTimeout(function(){ window.open(url,'_blank','noopener'); }, 180);
+    // (c) Redirect no MESMO tick (sem setTimeout / sem window.open) — número fixo correto
+    var msg='Olá! Tenho interesse no Edifício Monalisa. Código: '+codigoUnico;
+    window.location.href='https://wa.me/5547991689990?text='+encodeURIComponent(msg);
   }
 
   /* ---------- bind dos CTAs ---------- */
   document.querySelectorAll('[data-cta]').forEach(function(el){
-    el.addEventListener('click',function(e){ e.preventDefault(); openWhatsApp(el.getAttribute('data-cta')); });
+    el.addEventListener('click',function(){ handleWhatsAppClick(el.getAttribute('data-cta')); });
   });
   document.querySelectorAll('[data-scroll]').forEach(function(el){
     el.addEventListener('click',function(){ var t=document.querySelector(el.getAttribute('data-scroll')); if(t)t.scrollIntoView({behavior:'smooth'}); });
